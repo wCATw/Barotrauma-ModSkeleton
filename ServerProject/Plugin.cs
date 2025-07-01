@@ -3,5 +3,7 @@
 namespace MyModName;
 public partial class Plugin : IAssemblyPlugin
 {
-    // Server-specific code
+    protected void InitializeServer()
+    {
+    }
 }

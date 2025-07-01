@@ -1,7 +1,10 @@
 ﻿using Barotrauma;
 
 namespace MyModName;
+
 public partial class Plugin : IAssemblyPlugin
 {
-    // Client-specific code
+    protected void InitializeClient()
+    {
+    }
 }

@@ -1,4 +1,5 @@
 ﻿using Barotrauma;
+using HarmonyLib;
 using System.Runtime.CompilerServices;
 
 [assembly: IgnoresAccessChecksTo("Barotrauma")]
@@ -8,11 +9,22 @@ using System.Runtime.CompilerServices;
 namespace MyModName;
 public partial class Plugin : IAssemblyPlugin
 {
+    public static Plugin Instance { get; private set; } = null!;
+    public static string Name => "My Mod Name";
+    public static string ShortName => "MyMod";
+    public static string Id => "mymod";
+    public Harmony harmony = new(Id);
+    public Networking Networking = new();
+
     public void Initialize()
     {
-        // When your plugin is loading, use this instead of the constructor
-        // Put any code here that does not rely on other plugins.
-        throw new NotImplementedException();
+        Logging.Info($"Welcome to \"{Name}\"!");
+#if SERVER
+        InitializeServer();
+#elif CLIENT
+        InitializeClient();
+#endif
+        Logging.Info($"{Name} initialized!");
     }
 
     public void OnLoadCompleted()
@@ -23,12 +35,14 @@ public partial class Plugin : IAssemblyPlugin
 
     public void PreInitPatching()
     {
+        Instance = this;
         // Not yet supported: Called during the Barotrauma startup phase before vanilla content is loaded.
     }
 
     public void Dispose()
     {
         // Cleanup your plugin!
-        throw new NotImplementedException();
+        Instance = null!;
+        harmony.UnpatchSelf();
     }
 }
