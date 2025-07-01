@@ -1,5 +1,6 @@
 <Project>
     <PropertyGroup>
+        <DisableParallelBuild>true</DisableParallelBuild>
         <!-- IMPORTANT: Should point to <Barotrauma_Install>\LocalMods\<MyModName>\ -->
         <!-- IMPORTANT: ModDeplyDir Path must end with '\' -->
         <ModDeployDir>..\LUATRAMA_DEBUG_LOCALMODS_MYMODDIR\</ModDeployDir>

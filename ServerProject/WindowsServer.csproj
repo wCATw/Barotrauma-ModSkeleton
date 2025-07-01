@@ -1,7 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <OutputPath>..\bin\Windows\Server</OutputPath>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Platforms>x64</Platforms>
@@ -24,33 +25,59 @@
   <ItemGroup>
     <Reference Include="0Harmony">
       <HintPath>..\Refs\0Harmony.dll</HintPath>
+        <Private>False</Private>
     </Reference>
     <Reference Include="DedicatedServer">
       <HintPath>..\Refs\Windows\DedicatedServer.dll</HintPath>
+        <Private>False</Private>
     </Reference>
     <Reference Include="BarotraumaCore">
       <HintPath>..\Refs\Windows\BarotraumaCore.dll</HintPath>
+        <Private>False</Private>
     </Reference>
     <Reference Include="Farseer.NetStandard">
       <HintPath>..\Refs\Farseer.NetStandard.dll</HintPath>
+        <Private>False</Private>
     </Reference>
     <Reference Include="Lidgren.NetStandard">
       <HintPath>..\Refs\Lidgren.NetStandard.dll</HintPath>
+        <Private>False</Private>
     </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>..\Refs\Mono.Cecil.dll</HintPath>
+        <Private>False</Private>
     </Reference>
     <Reference Include="MonoGame.Framework.Windows.NetStandard">
       <HintPath>..\Refs\MonoGame.Framework.Windows.NetStandard.dll</HintPath>
+        <Private>False</Private>
     </Reference>
-    <Reference Include="MonoMod.Common">
-      <HintPath>..\Refs\MonoMod.Common.dll</HintPath>
-    </Reference>
+      <Reference Include="MonoMod.Backports">
+        <HintPath>..\Refs\MonoMod.Backports.dll</HintPath>
+        <Private>False</Private>
+      </Reference>
+      <Reference Include="MonoMod.Iced">
+        <HintPath>..\Refs\MonoMod.Iced.dll</HintPath>
+        <Private>False</Private>
+      </Reference>
+      <Reference Include="MonoMod.ILHelpers">
+        <HintPath>..\Refs\MonoMod.ILHelpers.dll</HintPath>
+        <Private>False</Private>
+      </Reference>
+      <Reference Include="MonoMod.RuntimeDetour">
+        <HintPath>..\Refs\MonoMod.RuntimeDetour.dll</HintPath>
+        <Private>False</Private>
+      </Reference>
+      <Reference Include="MonoMod.Utils">
+        <HintPath>..\Refs\MonoMod.Utils.dll</HintPath>
+        <Private>False</Private>
+      </Reference>
     <Reference Include="MoonSharp.Interpreter">
       <HintPath>..\Refs\MoonSharp.Interpreter.dll</HintPath>
+        <Private>False</Private>
     </Reference>
     <Reference Include="XNATypes">
       <HintPath>..\Refs\XNATypes.dll</HintPath>
+        <Private>False</Private>
     </Reference>
   </ItemGroup>
 
