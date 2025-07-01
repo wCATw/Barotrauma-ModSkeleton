@@ -1,29 +1,45 @@
-This is a project template for making plugin-powered ContentPackages for LuaCsForBarotrauma. For more details,
-visit the Wiki.
+# ModSkeleton
 
+This is a project template for creating assembly-based Barotrauma mods using Luatrauma (LuaCsForBarotrauma).
 
-Quick Start Steps:
+## Quick Start
 
-1. Download the Libraries and place them in /Refs as shown below.
+### Download LuaCsForBarotrauma Refs
 
+Download the reference libraries from: https://github.com/evilfactory/LuaCsForBarotrauma/releases/download/latest/luacsforbarotrauma_refs.zip
 
-You need to edit the Build.props file: 
+Extract the contents into the "Refs" folder in this project.
 
-<ModDeployDir>..\LUATRAMA_DEBUG_LOCALMODS_MYMODDIR\</ModDeployDir>
+### Configure Build.props
 
-Replace "..\LUATRAMA_DEBUG_LOCALMODS_MYMODDIR\" with the directory of your mod in "Barotrauma/LocalMods/" 
+Make a copy of `Build.props.example` and rename it to `Build.props`.
 
-<AssemblyName>MyModName</AssemblyName>
+Then edit `Build.props` to set the deployment path and assembly name.
 
-Replace "MyModName" with a valid assembly name, this should be similar to your mod name but does not need to match. This name should:
-- Not include spaces.
-- Not include special characters, periods are allowed.
-- Use english characters.
+ModDeployDir:
+- Must point to your mod's folder under Barotrauma/LocalMods
+- Must end with a backslash "\"
 
+AssemblyName:
+- Should not contain spaces or special characters (periods "." are allowed)
+- Use only English letters and numbers
+- Must match the name of the solution (.sln) file
 
-2. Set the executable directory for the Launch Configurations (Client, Server).
+## Documentation
 
+See the LuaCsForBarotrauma wiki for scripting reference and advanced usage:
 
-3. Set your details (modname, files, etc) in Assets/filelist.xml
-- Note: All files should be placed under "/Content" and will be copied automatically to "LocalMods/<YourMod>/Content/...".
-your "filelist.xml" should list your mods' content files in the format of "%ModDir%/Content/..."
+https://github.com/evilfactory/LuaCsForBarotrauma/wiki
+https://luatrauma.github.io/Luatrauma.Docs/cs/introduction/
+
+## Troubleshooting
+
+If the mod does not appear in Barotrauma:
+- Check that ModDeployDir in Build.props is correct
+- Make sure all content files are listed in filelist.xml
+- Verify the build completes without errors
+- Make sure all your refs are properly included in your .csproj file
+
+After some LuaCsForBarotrauma updates, DLL files may be replaced or renamed.  
+For example, your mod might reference `MonoMod.Common`, while the game and refs now use `MonoMod.Utils`.  
+Always double-check that your references match the latest files from the luacsforbarotrauma_refs.zip archive.

@@ -1,10 +1,7 @@
 <Project>
     <PropertyGroup>
-        <DisableParallelBuild>true</DisableParallelBuild>
-        <!-- IMPORTANT: Should point to <Barotrauma_Install>\LocalMods\<MyModName>\ -->
-        <!-- IMPORTANT: ModDeplyDir Path must end with '\' -->
+        <BuildInParallel>false</BuildInParallel>
         <ModDeployDir>..\LUATRAMA_DEBUG_LOCALMODS_MYMODDIR\</ModDeployDir>
-        <!-- IMPORTANT: Avoid the use of special (IE: / : ; , \ < > ?) (periods "." are good) and non-english characters in the AssemblyName.-->
         <AssemblyName>MyModName</AssemblyName>
     </PropertyGroup>
 </Project>
