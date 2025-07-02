@@ -29,8 +29,8 @@ AssemblyName:
 
 See the LuaCsForBarotrauma wiki for scripting reference and advanced usage:
 
-https://github.com/evilfactory/LuaCsForBarotrauma/wiki
-https://luatrauma.github.io/Luatrauma.Docs/cs/introduction/
+https://github.com/evilfactory/LuaCsForBarotrauma/
+https://luatrauma.github.io/Luatrauma.Docs/
 
 ## Troubleshooting
 
