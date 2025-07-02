@@ -1,6 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <Import Project="../Build.props"/>
 
+  <Target Name="RunSetupRefs" BeforeTargets="BeforeBuild">
+    <Exec Command=" &quot;$(SolutionDir)Tools\setup_refs.py&quot; --building" />
+  </Target>
+
     <PropertyGroup>
         <OutputPath>..\bin\OSX\Client</OutputPath>
         <TargetFramework>net8.0</TargetFramework>

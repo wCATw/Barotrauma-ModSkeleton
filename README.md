@@ -4,7 +4,7 @@ This is a project template for creating assembly-based Barotrauma mods using Lua
 
 ## Quick Start
 
-### Download LuaCsForBarotrauma Refs
+### Download LuaCsForBarotrauma Refs (if you have python3 on pc, skip this if solution is built successfully)
 
 Download the reference libraries from: https://github.com/evilfactory/LuaCsForBarotrauma/releases/download/latest/luacsforbarotrauma_refs.zip
 
