@@ -1,4 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="../Build.props"/>
 
     <PropertyGroup>
         <OutputPath>..\bin\Linux\Server</OutputPath>
@@ -67,7 +68,6 @@
     </ItemGroup>
 
     <Import Project="..\SharedProject\SharedProject.projitems" Label="Shared" />
-    <Import Project="../Build.props"/>
 
     <PropertyGroup>
         <RootNamespace>$(SolutionName.Replace(" ", "_"))</RootNamespace>

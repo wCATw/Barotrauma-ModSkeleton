@@ -1,5 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+    <Import Project="../Build.props"/>
+
     <PropertyGroup>
         <OutputPath>..\bin\Assets</OutputPath>
         <TargetFramework>net8.0</TargetFramework>
@@ -7,8 +9,6 @@
         <Nullable>enable</Nullable>
         <RootNamespace>ModAssets</RootNamespace>
     </PropertyGroup>
-
-    <Import Project="../Build.props"/>
     
     <ItemGroup>
       <Content Include="..\README.md">

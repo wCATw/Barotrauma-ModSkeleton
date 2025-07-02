@@ -1,4 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../Build.props"/>
 
   <PropertyGroup>
     <OutputPath>..\bin\Windows\Server</OutputPath>
@@ -12,7 +13,6 @@
   </PropertyGroup>
 
   <Import Project="..\SharedProject\SharedProject.projitems" Label="Shared" />
-  <Import Project="../Build.props"/>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <DefineConstants>TRACETRACE;SERVER;WINDOWS</DefineConstants>
