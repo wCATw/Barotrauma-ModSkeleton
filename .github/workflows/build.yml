@@ -1,0 +1,47 @@
+﻿name: Build the Mod
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Create Build.props
+        run: |
+          echo '<Project>
+            <PropertyGroup>
+              <BuildInParallel>false</BuildInParallel>
+              <ModDeployDir>$(Build.SourcesDirectory)/mod_output/</ModDeployDir>
+              <AssemblyName>MyModName</AssemblyName>
+            </PropertyGroup>
+          </Project>' > Build.props
+          
+      - name: Setup Luatrauma Refs
+        run: |
+          curl -L -o refs.zip https://github.com/evilfactory/LuaCsForBarotrauma/releases/download/latest/luacsforbarotrauma_refs.zip
+          mkdir -p Refs
+          unzip -o refs.zip -d Refs
+          
+      - name: Build the Mod
+        run: |
+          dotnet build -c Release --no-parallel
+
+      - name: Create ZIP archive
+        run: |
+          zip -r mod.zip mod_output
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: MyModName
+          path: mod.zip
